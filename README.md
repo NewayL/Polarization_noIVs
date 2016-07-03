@@ -12,4 +12,7 @@ Initial code 2: Bartik_15Oct26.do
 Generate regional trade shocks using bartik format.
 
 Initial code 3: Delta_15Oct26.do
-Compute the regional "delta_omega" (share of tasks being used by foreign countries )
+Compute the regional "delta_omega" (share of tasks being used by foreign countries)
+
+Initial code 4: dataclean_16Jul02.do
+This code is the starting part of "Bartik_15Oct17.do"(saved in local computer) , which was used to clean the data
