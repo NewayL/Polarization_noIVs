@@ -15,7 +15,7 @@ This code is the starting part of "Bartik_15Oct17.do"(saved in local computer) ,
 Initial code 2: regressions_noagct.do (regressionsYawen_15Oct28.do)
 This code was used to generate the results in my JMP, where tariff changes are used as IVs. (exclude agriculture sector)
 
-Initial code 3: regressions_agct.do (regressionsYawen_15Oct28.do)
+Initial code 3: regressions_agct.do (regressionsYawen_15Nov22.do)
 This code was used to generate the results in my JMP, where tariff changes are used as IVs. (include agriculture sector)
 
 Initial code 4: Bartik.do (Bartik_15Oct26.do)
