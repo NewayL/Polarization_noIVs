@@ -1,5 +1,5 @@
 # Polarization_noIV
-polarization project with no IV
+polarization project with IVs
 (names in parentheses are local file names)
 
 Project Created on July 2nd, 2016
