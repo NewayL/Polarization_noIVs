@@ -1,10 +1,13 @@
-# Polarization_IVs
-polarization project with IVs.
+# Polarization_noIVs
+polarization project with no IVs. 
 (names in parentheses are local file names)
-The files are used to generate the results in Yawen's job market paper and thesis chapter.
 
+This projects start from Polarization_IVs, which was used to generate the results in Yawen's JMP. Following David's suggestion, trade shocks should not be instrumented, as they are exogenous by construction (Bartik form with initial labor shares). This projects modify the Polarization_IVs so that trade shocks and tariff changes are used as exogenous regressors directly. 
 
-Project Created on July 2nd, 2016, to store the files used to generate results in Yawen's JMP
+Project created: July 7th, 2016.
+Written by: Yawen Liang
+
+Initial Files:
 
 Initial code 1: dataclean.do (dataclean_16Jul02.do)
 This code is the starting part of "Bartik_15Oct17.do"(saved in local computer) , which was used to clean the data.
@@ -23,3 +26,6 @@ Compute the regional "delta_omega" (share of tasks being used by foreign countri
 
 Initial code 6: counterfactual.do (counterfactual_15Dec18.do)
 Compute the total trade effect after getting the regression estimates.
+
+Pull Requests:
+
