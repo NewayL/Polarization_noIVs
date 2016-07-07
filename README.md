@@ -4,9 +4,7 @@ polarization project with IVs.
 The files are used to generate the results in Yawen's job market paper and thesis chapter.
 
 
-Project Created on July 2nd, 2016
-To run the regressions with no IV's
-Bartik form variables are treated as exogeneous, tariff changes are used as independent variables directy rather than IVs.
+Project Created on July 2nd, 2016, to store the files used to generate results in Yawen's JMP
 
 Initial code 1: dataclean.do (dataclean_16Jul02.do)
 This code is the starting part of "Bartik_15Oct17.do"(saved in local computer) , which was used to clean the data.
