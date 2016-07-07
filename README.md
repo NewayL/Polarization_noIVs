@@ -1,4 +1,4 @@
-# Polarization_noIV
+# Polarization_IV
 polarization project with IVs.
 (names in parentheses are local file names)
 The files are used to generate the results in Yawen's job market paper and thesis chapter.
