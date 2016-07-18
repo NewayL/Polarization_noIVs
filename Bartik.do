@@ -1,5 +1,8 @@
-  * This do file is written to compute the regional trade shocks using Bartik decomposition.
+* This do file is written to compute the regional trade shocks using Bartik decomposition.
 * Trade data come from UN Comtrade (WITS), labor shares are computed using HH data.
+* This file is identical to Bartik_15Oct26.do, except that it keeps the initial industrial labor shares 
+* and task compositions for each region
+
 
 * Countries to be included:
 * Australia * Belgium-Luxembourg * Brazil * Canada * China * Finland * France * Germany * Hong Kong * India 
@@ -89,6 +92,7 @@ gen `task'ind_shr_kab_1990 = `task'ind_shr_kab if year==1990
 replace `task'ind_shr_kab_1990 = L12.`task'ind_shr_kab if year==2002
 }
 
+
 expand 2, gen(dexp)
 replace year=1996 if year==1990 & dexp==1
 replace year=2006 if year==2002 & dexp==1
@@ -144,7 +148,25 @@ gen tariff_`task'_kab = `task'ind_shr_kab*avgtariff
 gen tariff_`task'_kab1990 = `task'ind_shr_kab_1990*avgtariff
 }
 
+keep year code1990 LFSind *_a_kab *_r_kab *_m_kab *_a_kab1990 *_r_kab1990 *_m_kab1990 Lind_shr_kab abstract_shr_indkab routine_shr_indkab manual_shr_indkab
+
+save "temp.dta",replace
+keep Lind_shr_kab abstract_shr_indkab routine_shr_indkab manual_shr_indkab code1990 year LFSind
+levelsof LFSind, local(indnum)
+reshape wide Lind_shr_kab abstract_shr_indkab routine_shr_indkab manual_shr_indkab, i(year code1990) j(LFSind)
+
+foreach ind of local indnum{
+replace Lind_shr_kab`ind'=0 if Lind_shr_kab`ind'==.
+}
+
+save "temp1.dta",replace
+
+use "temp.dta",clear
 collapse (sum) *_a_kab *_r_kab *_m_kab *_a_kab1990 *_r_kab1990 *_m_kab1990 , by(code1990 year)
+merge 1:1 code1990 year using "temp1.dta"
+drop _merge
+erase "temp.dta"
+erase "temp1.dta"
 
 xtset code1990 year
 foreach part in CHN top20 WLD{
@@ -196,7 +218,7 @@ keep if year==1996|year==2006
 drop _merge
 
 
-save "data\output\WITS_kabyr9006bg_15Oct26.dta",replace
+save "data\output\WITS_kabyr9006bg_16Jul07.dta",replace
 
 
 
