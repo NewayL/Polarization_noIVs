@@ -30,5 +30,13 @@ Compute the regional "delta_omega" (share of tasks being used by foreign countri
 Initial code 7: counterfactual.do (counterfactual_15Dec18.do)
 Compute the total trade effect after getting the regression estimates.
 
+Initial code 8: counterfactual17Apr27.do
+
+Initial code 9:
+
+Initial code 10:
+
+Initial code 11:
+
 Pull Requests:
 
